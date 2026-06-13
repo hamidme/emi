@@ -1,0 +1,16 @@
+[
+  {
+    "title": "ACI Webinar: Cheminformatics for African Research Teams",
+    "date": "2026-07-18",
+    "type": "Webinar",
+    "description": "An online session introducing practical cheminformatics workflows, open data tools, and collaborative research ideas for African chemists.",
+    "link": "contact.html"
+  },
+  {
+    "title": "Workshop: QSAR and Machine Learning in Chemistry",
+    "date": "2026-08-02",
+    "type": "Workshop",
+    "description": "A hands-on workshop on molecular descriptors, QSAR modelling, and explainable AI for safer and more efficient chemical discovery.",
+    "link": "contact.html"
+  }
+]

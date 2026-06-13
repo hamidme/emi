@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <title>Dr. Hammed Wasiu Adebayo | Chemist, Cheminformatics Researcher & Educator</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --dark-blue: #0f2027;
+            --teal: #203a43;
+            --light-teal: #2c5364;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .hero-section {
+            background: linear-gradient(to right, var(--dark-blue), var(--teal), var(--light-teal));
+            color: white;
+            padding: 80px 0;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+        @media (min-width: 768px) {
+            .hero-actions {
+                justify-content: flex-start;
+            }
+        }
+        .navbar-brand, .nav-link {
+            font-weight: 600;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .impact-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .footer {
+            background-color: var(--dark-blue);
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Dr. Wasiu Hammed</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aci.html">ACI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-center text-md-start">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="display-4 fw-bold">Dr. Wasiu Adebayo Hammed </h1>
+                    <p class="lead text-info fw-semibold">Chemist | Cheminformatics Researcher | AI in Chemistry | Educator</p>
+                    <p class="fs-5 text-light">
+                        I am a lecturer, PhD-trained polymer chemist, and cheminformatics researcher working at the intersection of chemistry, AI, and data-driven discovery.
+                    </p>
+                    <div class="hero-actions mt-4">
+                        <a href="https://github.com/hamidme" target="_blank" class="btn btn-outline-light"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://medium.com/@hwaasi" target="_blank" class="btn btn-outline-light"><i class="fab fa-medium"></i> Medium</a>
+                        <a href="https://scholar.google.com/citations?user=6dkXa0wAAAAJ&hl=en&oi=ao" target="_blank" class="btn btn-outline-light"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                        <a href="https://www.researchgate.net/profile/Wasiu-Hammed" target="_blank" class="btn btn-outline-light"><i class="fas fa-flask"></i> ResearchGate</a>
+                        <a href="contact.html" class="btn btn-info text-dark fw-bold"><i class="fas fa-envelope"></i> Collaborate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Context -->
+    <main class="container my-5">
+        <div class="row">
+            <!-- About & Core Background -->
+            <div class="col-lg-8">
+                <section class="mb-5">
+                    <h2 class="border-bottom pb-2 text-dark"><i class="fas fa-user-graduate text-primary"></i> About Me</h2>
+                    <p>I am a Lecturer in the Department of Chemical Sciences at Fountain University, Nigeria, and a PhD-trained Polymer Chemist with international academic and professional experience across Nigeria, Malaysia, Oman, and the United Arab Emirates.</p>
+                    <p>My current work bridges Chemistry, Artificial Intelligence, and Information Technology through applications of cheminformatics, QSAR modelling, computational toxicology, and machine learning. I am currently pursuing an MSc in Information Technology (Cheminformatics) at the International Islamic University Malaysia (IIUM).</p>
+                    <p>I am also the Founder of the African Cheminformatics Initiative (ACI), a capacity-building platform dedicated to advancing cheminformatics education and research across Africa.</p>
+                </section>
+
+                <section class="mb-5">
+                    <h2 class="border-bottom pb-2 text-dark"><i class="fas fa-chart-line text-primary"></i> Research Impact</h2>
+                    <div class="row g-3 mt-2 align-items-stretch">
+                        <div class="col-sm-6 col-xl-3"><div class="card impact-card p-3 text-center"><h3 class="text-primary mb-1">192+</h3><p class="small text-muted mb-0">Google Scholar Citations</p></div></div>
+                        <div class="col-sm-6 col-xl-3"><div class="card impact-card p-3 text-center"><h3 class="text-primary mb-1">8</h3><p class="small text-muted mb-0">Peer-Reviewed Publications</p></div></div>
+                        <div class="col-sm-6 col-xl-3"><div class="card impact-card p-3 text-center"><h3 class="text-primary mb-1">4</h3><p class="small text-muted mb-0">Countries of Professional Experience</p></div></div>
+                        <div class="col-sm-6 col-xl-3"><div class="card impact-card p-3 text-center"><h3 class="text-primary mb-1">6</h3><p class="small text-muted mb-0">Google Scholar h-index</p></div></div>
+                    </div>
+                </section>
+
+                <section class="mb-5">
+                    <h2 class="border-bottom pb-2 text-dark"><i class="fas fa-flask text-primary"></i> Current Projects</h2>
+                    <div class="row g-3 mt-2">
+                        <div class="col-md-6"><div class="card h-100 p-3"><h5>Machine Learning-Based QSAR Modelling</h5><p class="text-muted small mb-0">Development of consensus machine learning models for toxicity prediction of food contaminants using RDKit, Scikit-Learn, and explainable AI approaches.</p></div></div>
+                        <div class="col-md-6"><div class="card h-100 p-3"><h5>Phthalate Contaminants in Nigerian Plastic Waste</h5><p class="text-muted small mb-0">Cheminformatics profiling and computational toxicology assessment of phthalate compounds associated with Nigerian plastic waste streams.</p></div></div>
+                        <div class="col-md-6"><div class="card h-100 p-3"><h5>Green Polymer Composites</h5><p class="text-muted small mb-0">Development of sustainable polymer composites from agricultural waste materials for packaging applications.</p></div></div>
+                        <div class="col-md-6"><div class="card h-100 p-3"><h5>African Cheminformatics Initiative</h5><p class="text-muted small mb-0">Building cheminformatics capacity in Africa through training, mentorship, workshops, and collaborative research.</p></div></div>
+                    </div>
+                </section>
+
+                <section class="mb-5">
+                    <h2 class="border-bottom pb-2 text-dark"><i class="fas fa-calendar-alt text-primary"></i> Upcoming Events</h2>
+                    <p class="text-muted small mb-3">Webinars, workshops, and community events from the African Cheminformatics Initiative.</p>
+                    <div id="home-events" class="row g-3 mt-2"></div>
+                </section>
+
+                <section class="mb-5">
+                    <h2 class="border-bottom pb-2 text-dark"><i class="fas fa-star text-primary"></i> Highlights</h2>
+                    <ul class="mb-0 text-muted">
+                        <li>192 Google Scholar Citations</li>
+                        <li>Google Scholar h-index: 6</li>
+                        <li>Scopus h-index: 5</li>
+                        <li>8 Peer-Reviewed Publications</li>
+                        <li>Research interests spanning Polymer Chemistry, Cheminformatics, QSAR, Computational Toxicology, and Sustainable Materials</li>
+                    </ul>
+                </section>
+
+                <section class="mb-5">
+                    <h2 class="border-bottom pb-2 text-dark"><i class="fas fa-microscope text-primary"></i> Core Research Interests</h2>
+                    <div class="row g-3 mt-2">
+                        <div class="col-md-6">
+                            <div class="card h-100 p-3">
+                                <h5><i class="fas fa-laptop-code text-info"></i> Cheminformatics & QSAR</h5>
+                                <p class="text-muted small">Developing quantitative structure-activity relationship models using molecular descriptors to screen organic compounds.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 p-3">
+                                <h5><i class="fas fa-biohazard text-danger"></i> Computational Toxicology</h5>
+                                <p class="text-muted small">Applying machine learning architectures to predict the hepatotoxicity of food contaminants and pollutants.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 p-3">
+                                <h5><i class="fas fa-atom text-success"></i> Polymer Chemistry</h5>
+                                <p class="text-muted small">Synthesizing and analyzing sustainable materials and functional polymers for industrial applications.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 p-3">
+                                <h5><i class="fas fa-chalkboard-teacher text-warning"></i> Digital Pedagogy</h5>
+                                <p class="text-muted small">Integrating EdTech frameworks and modern software development practices into science curricula.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar / Quick Info -->
+            <div class="col-lg-4">
+                <div class="card bg-light p-4 mb-4">
+                    <h4 class="mb-3">Affiliations</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-university text-secondary me-2"></i> Lecturer, Fountain University</li>
+                        <li class="mb-2"><i class="fas fa-graduation-cap text-secondary me-2"></i> MSc IT Candidate, IIUM</li>
+                        <li class="mb-2"><i class="fas fa-globe text-secondary me-2"></i> Founder, African Cheminformatics Initiative (ACI)</li>
+                    </ul>
+                </div>
+
+                <div class="card bg-light p-4 mb-4">
+                    <h4 class="mb-3">Collaborate</h4>
+                    <p class="text-muted small">I welcome opportunities for interdisciplinary collaboration in cheminformatics, machine learning for chemistry, computational toxicology, sustainable materials, chemistry education, and capacity-building initiatives across Africa.</p>
+                    <a href="contact.html" class="btn btn-info w-100 fw-semibold"><i class="fas fa-paper-plane me-2"></i> Get In Touch</a>
+                </div>
+
+                <div class="card bg-light p-4">
+                    <h4 class="mb-3">Research Hubs</h4>
+                    <div class="d-grid gap-2">
+                        <a href="https://scholar.google.com/citations?user=6dkXa0wAAAAJ&hl=en&oi=ao" target="_blank" class="btn btn-outline-dark btn-sm text-start"><i class="fas fa-graduation-cap me-2 text-warning"></i> Google Scholar</a>
+                        <a href="https://www.scopus.com/authid/detail.uri?authorId=55180709600" target="_blank" class="btn btn-outline-dark btn-sm text-start"><i class="fas fa-book-open me-2 text-danger"></i> Scopus</a>
+                        <a href="https://github.com/hamidme" target="_blank" class="btn btn-outline-dark btn-sm text-start"><i class="fab fa-github me-2 text-success"></i> GitHub</a>
+                        <a href="https://medium.com/@hwaasi" target="_blank" class="btn btn-outline-dark btn-sm text-start"><i class="fab fa-medium me-2 text-success"></i> Medium</a>
+                        <a href="https://www.researchgate.net/profile/Wasiu-Hammed" target="_blank" class="btn btn-outline-dark btn-sm text-start"><i class="fas fa-flask me-2 text-info"></i> ResearchGate</a>
+                        <a href="https://www.linkedin.com/in/wasiu-adebayo-hammed-phd-0527617a/" target="_blank" class="btn btn-outline-dark btn-sm text-start"><i class="fab fa-linkedin me-2 text-primary"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-center py-4 mt-auto">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Dr. Hammed Wasiu Adebayo. Built with Bootstrap & GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <script>
+        async function loadEvents() {
+            const container = document.getElementById('home-events');
+            if (!container) return;
+
+            try {
+                const events = await fetch('events.json').then(res => res.json()).catch(() => []);
+                container.innerHTML = events.map(event => `
+                    <article class="col-md-6">
+                        <div class="card h-100 p-3">
+                            <p class="text-muted small mb-1">${event.type || 'Event'}</p>
+                            <h3 class="h5 mb-2">${event.title}</h3>
+                            <p class="text-muted small mb-2"><i class="fas fa-calendar-day me-2"></i>${event.date}</p>
+                            <p class="text-muted small mb-3">${event.description}</p>
+                            <a href="${event.link || 'contact.html'}" class="btn btn-sm btn-outline-dark">Learn more</a>
+                        </div>
+                    </article>
+                `).join('');
+            } catch (error) {
+                container.innerHTML = '<p class="text-muted small">Events will appear here soon.</p>';
+            }
+        }
+
+        loadEvents();
+    </script>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

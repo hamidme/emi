@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Cheminformatics in Africa: Why Data-Driven Chemistry Matters",
+    "date": "2026-06-13",
+    "excerpt": "A short reflection on how cheminformatics can strengthen research, teaching, and collaboration across African institutions.",
+    "slug": "cheminformatics-in-africa"
+  },
+  {
+    "title": "Machine Learning for Toxicology and Safer Food Systems",
+    "date": "2026-06-10",
+    "excerpt": "How QSAR and explainable AI approaches can support computational toxicology and evidence-based risk assessment.",
+    "slug": "machine-learning-for-toxicology"
+  },
+  {
+    "title": "Building a Research Community Around Sustainable Materials",
+    "date": "2026-06-05",
+    "excerpt": "Why interdisciplinary collaboration in sustainable polymers and materials science is critical for the next generation of research.",
+    "slug": "sustainable-materials-community"
+  }
+]
