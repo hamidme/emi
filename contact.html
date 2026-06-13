@@ -52,8 +52,10 @@
                     <h2 class="h4 mb-3">Get in touch</h2>
                     <p class="text-muted">Use your official university email for research and collaboration enquiries, or connect through the profile links below.</p>
                     <div class="d-grid gap-2 mb-3">
-                        <a href="mailto:hammed.adebayo@fuo.edu.ng" class="btn btn-info text-dark fw-semibold"><i class="fas fa-envelope me-2"></i> Email for collaboration</a>
+                        <a href="mailto:hammed.adebayo@fuo.edu.ng?subject=Collaboration%20Enquiry" class="btn btn-info text-dark fw-semibold"><i class="fas fa-envelope me-2"></i> Email for collaboration</a>
+                        <button type="button" id="copy-email-btn" class="btn btn-outline-dark"><i class="fas fa-copy me-2"></i> Copy email address</button>
                     </div>
+                    <p id="email-feedback" class="small text-success mb-3 d-none">Email address copied. You can paste it into your preferred mail app if the mail client does not open.</p>
                     <div class="d-grid gap-2 d-md-flex">
                         <a href="https://scholar.google.com/citations?user=6dkXa0wAAAAJ&hl=en&oi=ao" target="_blank" class="btn btn-outline-dark"><i class="fas fa-graduation-cap me-2"></i> Google Scholar</a>
                         <a href="https://github.com/wasiuhammed" target="_blank" class="btn btn-outline-dark"><i class="fab fa-github me-2"></i> GitHub</a>
@@ -81,6 +83,26 @@
             <p class="mb-0">&copy; 2026 Dr. Hammed Wasiu Adebayo. Built with Bootstrap & GitHub Pages.</p>
         </div>
     </footer>
+
+    <script>
+        const copyEmailBtn = document.getElementById('copy-email-btn');
+        const emailFeedback = document.getElementById('email-feedback');
+
+        if (copyEmailBtn && emailFeedback) {
+            copyEmailBtn.addEventListener('click', async () => {
+                const email = 'hammed.adebayo@fuo.edu.ng';
+
+                try {
+                    await navigator.clipboard.writeText(email);
+                    emailFeedback.textContent = 'Email address copied. You can paste it into your preferred mail app if the mail client does not open.';
+                    emailFeedback.classList.remove('d-none');
+                } catch (error) {
+                    emailFeedback.textContent = 'Copy failed. Please copy the email address manually: ' + email;
+                    emailFeedback.classList.remove('d-none');
+                }
+            });
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
