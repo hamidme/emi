@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Blog Post | Dr. Hammed Wasiu Adebayo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root { --dark-blue:#0f2027; --teal:#203a43; --light-teal:#2c5364; }
+        body { font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; color:#333; background-color:#f8f9fa; }
+        .page-hero { background:linear-gradient(to right,var(--dark-blue),var(--teal),var(--light-teal)); color:white; padding:60px 0; }
+        .article-card { background:#fff; border:none; box-shadow:0 4px 12px rgba(0,0,0,0.06); }
+        #post-content { max-width:980px; margin-inline:auto; padding-inline:clamp(1rem, 12vw, 120px); }
+        #post-content .series-kicker { color:#6c757d; font-size:0.85rem; font-weight:700; letter-spacing:0.04em; line-height:1.4; margin-bottom:0.75rem; text-transform:uppercase; }
+        #post-content p,
+        #post-content li { font-size:1.05rem; line-height:1.8; }
+        #post-content figure { margin-inline:0; }
+        #post-content figure img { display:block; width:100%; margin-inline:auto; }
+        #post-content figure:has(img[src$="figure-1.webp"]),
+        #post-content figure:has(img[src$="figure_1.webp"]),
+        #post-content figure:has(img[src$="Figure_1.png"]) { margin-inline:calc(clamp(1rem, 12vw, 120px) * -1); }
+        #post-content img[src$="figure-1.webp"],
+        #post-content img[src$="figure_1.webp"],
+        #post-content img[src$="Figure_1.png"] { max-width:760px; }
+        @media (max-width: 767.98px) {
+            #post-content { padding-inline:0; }
+            #post-content figure { margin-inline:0; }
+        }
+        .footer { background-color:var(--dark-blue); color:#ccc; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Dr. Wasiu Hammed</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aci.html">ACI</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="container">
+            <a href="blog.html" class="text-white text-decoration-none mb-3 d-inline-block">← Back to blog</a>
+            <h1 id="post-title" class="display-6 fw-bold mb-2"></h1>
+            <p id="post-meta" class="text-light mb-0"></p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <article class="article-card p-4 p-md-5 rounded">
+            <div id="post-content"></div>
+        </article>
+    </main>
+
+    <script>
+        function escapeAttribute(value) {
+            return String(value || '')
+                .replaceAll('&', '&amp;')
+                .replaceAll('"', '&quot;')
+                .replaceAll('<', '&lt;')
+                .replaceAll('>', '&gt;');
+        }
+
+        function renderFigures(figures) {
+            if (!Array.isArray(figures) || !figures.length) return '';
+
+            return `
+                <div class="row g-4 my-4">
+                    ${figures.map(figure => `
+                        <figure class="col-md-6 text-center">
+                            <img src="${escapeAttribute(figure.src)}"
+                                 alt="${escapeAttribute(figure.alt || figure.caption || 'Figure')}"
+                                 class="img-fluid rounded shadow-sm mb-2">
+                            ${figure.caption ? `<figcaption class="text-muted small">${figure.caption}</figcaption>` : ''}
+                        </figure>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        async function loadPost() {
+            const params = new URLSearchParams(window.location.search);
+            const slug = params.get('slug');
+            const postTitle = document.getElementById('post-title');
+            const postMeta = document.getElementById('post-meta');
+            const postContent = document.getElementById('post-content');
+
+            if (!slug) {
+                postTitle.textContent = 'Post not found';
+                postContent.innerHTML = '<p class="mb-0">The requested article could not be loaded.</p>';
+                return;
+            }
+
+            try {
+                const response = await fetch('posts.json?cb=' + Date.now());
+                const posts = await response.json();
+                const post = posts.find(item => item.slug === slug);
+
+                if (!post) {
+                    postTitle.textContent = 'Post not found';
+                    postContent.innerHTML = '<p class="mb-0">The requested article could not be found.</p>';
+                    return;
+                }
+
+                document.title = `${post.title} | Dr. Hammed Wasiu Adebayo`;
+                postTitle.textContent = post.title;
+                postMeta.textContent = post.date || 'Latest update';
+
+                const articleBody = post.content || post.excerpt || '';
+                const coverImage = post.cover_image && !articleBody.includes(post.cover_image)
+                    ? `<img src="${escapeAttribute(post.cover_image)}" alt="${escapeAttribute(post.title)}" class="img-fluid rounded mb-4">`
+                    : '';
+                const figureGallery = post.content ? '' : renderFigures(post.figures);
+
+                postContent.innerHTML = `${coverImage}${figureGallery}${articleBody}`;
+            } catch (error) {
+                postTitle.textContent = 'Unable to load article';
+                postContent.innerHTML = '<p class="mb-0">Please try again later.</p>';
+            }
+        }
+
+        loadPost();
+    </script>
+
+    <footer class="footer text-center py-4 mt-auto">
+        <div class="container"><p class="mb-0">&copy; 2026 Dr. Hammed Wasiu Adebayo.</p></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
